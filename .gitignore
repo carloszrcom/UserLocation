@@ -95,7 +95,4 @@ build/
 # Ignorar archivos de configuración sensibles (opcional)
 *.xcconfig
 Secrets/
-
-Borrar/
-UserLocation/Borrar2/borrar2.rtf
-project.pbxproj
+# project.pbxproj
