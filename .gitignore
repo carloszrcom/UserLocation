@@ -60,3 +60,42 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+
+# DESDE AQUÍ HACIA ABAJO --> Añadido por ChatGPT para evitar subir info sensible:
+
+# Ignorar datos específicos de usuarios
+*.xcuserdatad
+*.xcuserdata
+
+# Ignorar información generada automáticamente por Xcode
+DerivedData/
+.idea/
+*.swp
+*.xcscmblueprint
+
+# Ignorar datos del debugger y configuraciones locales de esquemas
+xcshareddata/xcdebugger/
+
+# Ignorar carpetas de build
+build/
+*.ipa
+*.app
+*.dSYM.zip
+*.dSYM
+
+# Ignorar archivos temporales
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Ignorar configuraciones de herramientas de integración continua
+.xcresult/
+
+# Ignorar archivos de configuración sensibles (opcional)
+*.xcconfig
+Secrets/
+
+Borrar/
+UserLocation/Borrar2/borrar2.rtf
+project.pbxproj
