@@ -6,16 +6,24 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    
+    @State private var location: MapCameraPosition = .userLocation(fallback: .automatic)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Map(position: $location) {
+            // Keep showing user location.
+            UserAnnotation()
         }
-        .padding()
+        .mapControls({
+            MapUserLocationButton()
+            MapPitchToggle()
+        })
+        .onAppear {
+            CLLocationManager().requestWhenInUseAuthorization()
+        }
     }
 }
 
