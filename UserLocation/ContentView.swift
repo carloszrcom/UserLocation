@@ -16,7 +16,23 @@ struct ContentView: View {
     var body: some View {
         Map(position: $location) {
             // Keep showing user location.
-            UserAnnotation()
+//            UserAnnotation()
+            
+            // Opción 1: Usando un símbolo del sistema
+            UserAnnotation(anchor: .bottom) {
+                Image(systemName: "location.north.fill")
+                    .foregroundStyle(.blue)
+                    .background(
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 26, height: 26)
+                    )
+            }
+            
+            // Opción 2: Vista personalizada con rotación
+//            UserAnnotation {
+//                CustomArrowView()
+//            }
         }
         .mapControls({
             MapUserLocationButton()
@@ -63,6 +79,29 @@ struct LocationPermissionAlert: View {
             } message: {
                 Text("Para usar esta app necesitamos acceder a tu ubicación. Por favor, activa el permiso en los ajustes.")
             }
+    }
+}
+
+// MARK: - Arrow view
+
+struct CustomArrowView: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(.white)
+                .frame(width: 40, height: 40)
+            
+            Image(systemName: "arrow.up")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 20, height: 20)
+                .foregroundStyle(.blue)
+                .background(
+                    Circle()
+                        .fill(.white)
+                        .frame(width: 30, height: 30)
+                )
+        }
     }
 }
 
